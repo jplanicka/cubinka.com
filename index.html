@@ -13,6 +13,24 @@
     
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        .blinking-text {
+            position: absolute;
+            top: 20px; /* Adjust positioning to avoid blocking the image or other elements */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            font-weight: bold;
+            color: red;
+            animation: blink 1s infinite;
+            z-index: 1000; /* Ensure it appears above other elements */
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -23,6 +41,9 @@
         <source src="./audio/music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
+    <!-- Aggressive blinking text -->
+    <div class="blinking-text">Zapni zvuk</div>
 
     <script>
         function playAudio() {
