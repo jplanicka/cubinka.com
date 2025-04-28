@@ -4,7 +4,7 @@
     <title>Jerryho Čubinka</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name=”description” content=”Šoupneš ho tam Jerrymu?” />
+    <meta name="description" content="Šoupneš ho tam Jerrymu?" />
     <meta property="og:type" content="website">
     <meta property="og:title" content="Jerryho Čubinka - Šup ho tam!">
     <meta property="og:url" content="https://jerryho.cubinka.com">
@@ -12,10 +12,25 @@
     <meta property="og:description" content="Šoupneš ho tam Jerrymu? Serečku Serečku, ošoupej babičku.">
     
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">
-        <img src="image.png" alt="Rotating Image" class="rotating-image">
+        <img src="image.png" alt="Rotating" class="rotating-image">
     </div>
+    <button id="play-button" onclick="playAudio()" class="fun-button">Šup ho tam!</button>
+    <audio id="background-audio" preload="auto" loop autoplay>
+        <source src="./audio/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function playAudio() {
+            const audio = document.getElementById('background-audio');
+            const button = document.getElementById('play-button');
+            audio.play(); // Start the audio
+            button.style.display = 'none'; // Hide the button
+        }
+    </script>
 </body>
 </html>
